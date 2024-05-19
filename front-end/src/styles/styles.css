@@ -1,0 +1,282 @@
+/* instant scroll on forward and back  */
+
+html {
+  scroll-behavior: auto !important;
+  overflow-y: scroll;
+}
+
+/* navbar  */
+
+.navBar {
+  background-color: #1b2845;
+}
+
+/* general css class  */
+
+.blackText {
+  color: #000000;
+}
+
+.blueText {
+  color: #65afff;
+}
+
+.hoverBlueText:hover {
+  color: #65afff !important;
+}
+
+.heavy {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.normalWeight {
+  font-weight: 400;
+}
+
+.oneRem {
+  font-size: 1rem;
+}
+
+.onePointTwoRem {
+  font-size: 1.2rem;
+}
+
+.onePointFiveRem {
+  font-size: 1.5rem;
+}
+
+.zeroPointEightRem {
+  font-size: 0.8rem;
+}
+
+.greyBg {
+  background-color: #f4f4f4;
+}
+
+.lightBlueBg {
+  background-color: #65afff25;
+}
+
+.widthFitContent {
+  width: fit-content;
+}
+
+.heightOneRem {
+  height: 1rem;
+}
+
+.heightOnePointTwoRem {
+  height: 1.2rem;
+}
+
+.heightOnePointFiveRem {
+  height: 1.5rem;
+}
+
+.heightTwoRem {
+  height: 2rem;
+}
+
+.lightGreyText {
+  color: #778899;
+}
+
+.marginForNavBar {
+  margin-top: 58px;
+}
+
+.paddingForNavBar {
+  padding-top: 58px;
+}
+
+/* home page  */
+
+.homePage ul {
+  list-style: none;
+  padding: 0;
+}
+
+.homePage Link {
+  text-decoration: none;
+}
+
+/* home page banner  */
+
+.withBackground {
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+    url("../assets/classroomView.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.opaque-background {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* admin page  */
+
+.adminPage ul {
+  list-style: none;
+  padding: 0;
+}
+
+.adminPage Link {
+  text-decoration: none;
+}
+
+/* entry details page */
+
+.displayLineBreaks {
+  white-space: pre-line;
+}
+
+/* post a job page  */
+
+/* custom modal width  */
+.modal-75w {
+  min-width: 75vw;
+}
+
+/* model scroll bar issue on admin edit page  */
+
+.modal-open {
+  padding-right: 0 !important;
+}
+
+.modal-open .navBar {
+  padding-right: 0 !important;
+}
+
+/* Job list fade in  */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 0.1s ease-in-out; /* Adjust the duration and timing function as needed */
+}
+
+/* min heights to allow scroll restore*/
+
+.minListHeight {
+  min-height: 2150px !important;
+}
+
+.sticky-spinner {
+  position: sticky;
+  top: 100px;
+  z-index: 10;
+}
+
+/* entry page email link  */
+.entryEmailLink:hover {
+  text-decoration: underline !important;
+}
+
+.backButtonHover:hover {
+  text-decoration: underline !important;
+  color: #000000 !important;
+}
+
+/* custom button colors  */
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+  background-color: #65afff !important;
+  border: #65afff 1px solid !important;
+}
+
+.custom-alert {
+  background-color: #65afff25 !important;
+  border: #65afff25 1px solid !important;
+}
+
+.btn-outline-primary,
+.btn-outline-primary:active,
+.btn-outline-primary:visited {
+  border: #65afff 1px solid !important;
+  color: #65afff !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #65afff !important;
+  border: #65afff 1px solid !important;
+  color: #ffffff !important;
+}
+
+.pagination .page-item:not(.active) .page-link {
+  color: #65afff !important;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #65afff !important;
+  border: #65afff 1px solid !important;
+}
+
+/* safety modal link  */
+
+.safety-modal-link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.safety-modal-link:hover {
+  text-decoration-thickness: 2px;
+  cursor: pointer;
+}
+
+/* custom border */
+
+.custom-card {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27rgba%28255, 255, 255, 1%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e") !important;
+}
+
+.nav-link:hover {
+  color: #65afff !important;
+}
+
+.admin-logout-button {
+  float: right;
+}
+
+/* advice list  */
+
+.adviceList {
+  list-style-type: none;
+}
+
+.adviceList li {
+  padding-left: 25px;
+  background-image: url("../assets/tick.png");
+  background-repeat: no-repeat;
+  background-size: 1rem 1rem;
+  background-position: 0 0.3rem;
+}
+
+/* medium bootstrap screen  */
+@media only screen and (max-width: 768px) {
+  .smallScreenOneRem {
+    font-size: 1rem;
+  }
+  .marginAutoMobile {
+    margin: auto;
+  }
+
+  .admin-logout-button {
+    float: none;
+  }
+}

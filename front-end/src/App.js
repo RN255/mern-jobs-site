@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Route, Routes } from "react-router-dom";
+
+import Home from "./pages/Home";
+import NavBar from "./components/NavBar";
+
+import ScrollToTopFunction from "./components/ScrollToTopFunction";
+import PostJob from "./pages/PostJob";
+import Info from "./pages/Info";
+import EntryDetail from "./pages/EntryDetail";
+import AdminPage from "./pages/AdminPage";
+import AdminPageEntryDetail from "./pages/AdminPageEntryDetail";
+import AdminPageApprovedEntryDetail from "./pages/AdminPageApprovedEntryDetail";
+import EditJob from "./pages/EditJob";
+
+import "./styles/styles.css";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ScrollToTopFunction></ScrollToTopFunction>
+      <NavBar></NavBar>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/postjob" element={<PostJob />} />
+        <Route path="/info" element={<Info />} />
+        <Route path="/entry/:id" element={<EntryDetail />} />
+        <Route path="/adminentry/:id" element={<AdminPageEntryDetail />} />
+        <Route
+          path="/adminapprovedentry/:id"
+          element={<AdminPageApprovedEntryDetail />}
+        />
+        <Route path="/a23d45m87i34n" element={<AdminPage />} />
+        <Route path="/editentry/:id" element={<EditJob />} />
+      </Routes>
+      <Footer></Footer>
+    </>
   );
 }
 
