@@ -7,7 +7,7 @@ A website for beginners to learn Chinese conversation. Created using React and h
 website is live at: https://dandanchinese.com/ (Will decommission in May 2024)
 
 ## Screenshots
-![Dan Dan Chinese screenshot](https://github.com/RN255/learn-chinese-gold/blob/master/src/assets/images/DanDanScreenshot.jpg)
+![Dan Dan Chinese screenshot](https://github.com/RN255/mern-jobs-site/blob/master/front-end/src/assets/eslGatewayScreenshot.jpg)
 
 ## Motivation
 
