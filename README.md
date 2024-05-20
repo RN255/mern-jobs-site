@@ -1,39 +1,28 @@
-## Project Name: Dan Dan Chinese (React)  
+## Project Name: ESL Gateway (MERN stack)  
 
-A website for beginners to learn Chinese conversation. Created using React and hosted on IONOS. The website got some views and some positive feedback but it wasn't going to be commercially viable so it's been taken offline as of May 2024.
-
-## How to use
-
-website is live at: https://dandanchinese.com/ (Will decommission in May 2024)
+A website for beginners to learn Chinese conversation. Created using mern and hosted (briefly) on IONOS and render. The website was not commercially successful so it's been taken offline.
 
 ## Screenshots
 ![Dan Dan Chinese screenshot](https://github.com/RN255/mern-jobs-site/blob/master/front-end/src/assets/eslGatewayScreenshot.jpg)
 
 ## Motivation
 
-I wanted to create a full website that was published online.
+I wanted to create a full-stack web project that would then be published online.
 
 ## Tech used
-- React
-- Bootstrap
+- MERN
 - IONOS
+- Render
 
 ## Project features
-- 51 Chinese lessons
-- conversation audio, Chinese, pinyin, English translations, word list, key phrases
+- Post jobs to the jobs board
+- View jobs on the job board
 
 ## Lessons learnt
-- Improved bootstrap and react skills
-- How to make a larger site with many pages
-- How to render data from a file - the file was an array of objects.
-- How to deploy a react website online via a hosting site
-- Google console and SEO
+- How to create a full stack web app and have it running live on the internet
 
 ## future development
-- More lessons
-- Memebers log in so users can track their progress
-- flashcards
-- quizes and scores for students
+- I don't think it's going to work as a business so it seems to be the end of this site. However, many lessons were learnt that can be used in future projects.
 
 
 ## Standard React README
