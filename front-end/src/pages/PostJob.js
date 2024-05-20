@@ -63,7 +63,7 @@ export default function PostJob() {
   const submitDataToDatabase = () => {
     axios
       .post(
-        "https://jobs-yong-zhong.onrender.com/api/entries/entries",
+        "/api/entries/entries",
         formData
       )
       .then((response) => {

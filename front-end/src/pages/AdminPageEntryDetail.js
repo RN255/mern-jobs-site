@@ -28,7 +28,7 @@ function EntryDetail() {
 
   useEffect(() => {
     axios
-      .get(`https://jobs-yong-zhong.onrender.com/api/entries/entries/${id}`)
+      .get(`/api/entries/entries/${id}`)
       .then((response) => {
         setEntry(response.data);
         setDataLoaded(true);
@@ -56,7 +56,7 @@ function EntryDetail() {
   // Function to handle approve
   const handleApprove = () => {
     axios
-      .put(`https://jobs-yong-zhong.onrender.com/api/entries/entries/${id}`, {
+      .put(`/api/entries/entries/${id}`, {
         approved: true,
       })
       .then((response) => {
@@ -72,7 +72,7 @@ function EntryDetail() {
   // Function to handle delete
   const handleDelete = () => {
     axios
-      .delete(`https://jobs-yong-zhong.onrender.com/api/entries/entries/${id}`)
+      .delete(`/api/entries/entries/${id}`)
       .then((response) => {
         console.log("Entry deleted successfully");
         // Redirect to another page

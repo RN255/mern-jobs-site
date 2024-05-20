@@ -15,7 +15,7 @@ export default function PaginatedJobList() {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("https://jobs-yong-zhong.onrender.com/api/entries/entries")
+      .get("/api/entries/entries")
       .then((response) => {
         // Filter only unapproved posts
         const sortedData = response.data

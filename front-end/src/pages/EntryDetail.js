@@ -22,7 +22,7 @@ function EntryDetail() {
 
   useEffect(() => {
     axios
-      .get(`https://jobs-yong-zhong.onrender.com/api/entries/entries/${id}`)
+      .get(`/api/entries/entries/${id}`)
       .then((response) => {
         setEntry(response.data);
         setDataLoaded(true);

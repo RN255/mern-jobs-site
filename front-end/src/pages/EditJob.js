@@ -23,7 +23,7 @@ export default function PostJob() {
 
   useEffect(() => {
     axios
-      .get(`https://jobs-yong-zhong.onrender.com/api/entries/entries/${id}`)
+      .get(`/api/entries/entries/${id}`)
       .then((response) => {
         setFormData(response.data);
       })
@@ -75,7 +75,7 @@ export default function PostJob() {
   const submitDataToDatabase = () => {
     axios
       .put(
-        `https://jobs-yong-zhong.onrender.com/api/entries/entries/${id}`,
+        `/api/entries/entries/${id}`,
         formData
       )
       .then((response) => {

@@ -18,7 +18,7 @@ export default function PaginatedJobList(props) {
     setCurrentPage(storedPage ? parseInt(storedPage, 10) : 1);
 
     axios
-      .get("https://jobs-yong-zhong.onrender.com/api/entries/entries")
+      .get("/api/entries/entries")
       .then((response) => {
         // Filter only approved posts
         const sortedData = response.data

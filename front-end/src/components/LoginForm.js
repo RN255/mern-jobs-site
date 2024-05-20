@@ -9,7 +9,7 @@ const LoginForm = () => {
   const handleLogin = async () => {
     try {
       // Make an API call to authenticate the user
-      const response = await fetch("https://jobs-yong-zhong.onrender.com/api/login", {
+      const response = await fetch("/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
