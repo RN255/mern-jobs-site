@@ -1,6 +1,6 @@
 ## Project Name: ESL Gateway (MERN stack)  
 
-A website for beginners to learn Chinese conversation. Created using mern and hosted (briefly) on IONOS and render. The website was not commercially successful so it's been taken offline.
+A job's board for ESL jobs. Created using mern and hosted (briefly) on IONOS and render. The website was not commercially successful so it's been taken offline.
 
 ## Screenshots
 ![Dan Dan Chinese screenshot](https://github.com/RN255/mern-jobs-site/blob/master/front-end/src/assets/eslGatewayScreenshot.jpg)
