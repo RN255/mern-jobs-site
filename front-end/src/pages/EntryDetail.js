@@ -10,6 +10,7 @@ import Button from "react-bootstrap/esm/Button";
 import { useNavigate } from "react-router-dom";
 import Alert from "react-bootstrap/Alert";
 import Modal from "react-bootstrap/Modal";
+import { JobsList } from "../modules/JobList";
 
 function EntryDetail() {
   const { id } = useParams();
@@ -21,16 +22,21 @@ function EntryDetail() {
   };
 
   useEffect(() => {
-    axios
-      .get(`/api/entries/entries/${id}`)
-      .then((response) => {
-        setEntry(response.data);
-        setDataLoaded(true);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    const found = JobsList.find((job) => job._id === id);
+    setEntry(found);
   }, [id]);
+
+  // useEffect(() => {
+  //   axios
+  //     .get(`/api/entries/entries/${id}`)
+  //     .then((response) => {
+  //       setEntry(response.data);
+  //       setDataLoaded(true);
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // }, [id]);
 
   // Function to format the date
   const formatDate = (dateString) => {
@@ -47,112 +53,114 @@ function EntryDetail() {
   return (
     <div className="container entryDetailsPage marginForNavBar">
       <div className="row">
-        {dataLoaded ? (
-          <div className="col pt-4 mb-5 fadeIn">
-            <Button
-              variant="link"
-              className="text-decoration-none blackText mb-2 ps-0 py-1 backButtonHover"
-              onClick={goBack}
-            >
-              <p className="d-flex align-items-center m-0">
-                <img
-                  src={leftArrow}
-                  alt="back angle icon"
-                  className="heightOneRem p-0 me-1"
-                />{" "}
-                Back
-              </p>
-            </Button>
-            <p className="mb-0 pt-3 border-top">
-              {formatDate(entry.dateCreated)}
+        {/* {dataLoaded ? ( */}
+        <div className="col pt-4 mb-5 fadeIn">
+          <Button
+            variant="link"
+            className="text-decoration-none blackText mb-2 ps-0 py-1 backButtonHover"
+            onClick={goBack}
+          >
+            <p className="d-flex align-items-center m-0">
+              <img
+                src={leftArrow}
+                alt="back angle icon"
+                className="heightOneRem p-0 me-1"
+              />{" "}
+              Back
             </p>
-            <h2 className="blueText p-0 mx-0 mt-2 mb-2">{entry.schoolName}</h2>
-            <h3 className="m-0 onePointTwoRem normalWeight d-flex align-items-center">
-              <img
-                src={workIcon}
-                alt="work Icon"
-                className="heightOnePointTwoRem me-3"
-              />
-              <p className="m-0 lightBlueBg rounded px-2 py-1">{entry.jobTitle}</p>
-            </h3>
-            <h3 className="m-0 onePointTwoRem py-1 normalWeight d-flex align-items-center">
-              <img
-                src={locationIcon}
-                alt="location Icon"
-                className="heightOnePointTwoRem me-3"
-              />
-              <p className="m-0 lightBlueBg rounded px-2 py-1">{entry.location}</p>
-            </h3>
-            <h3 className="m-0 onePointTwoRem normalWeight d-flex align-items-center">
-              <img
-                src={money}
-                alt="location Icon"
-                className="heightOnePointTwoRem me-3"
-              />
-              <p className="m-0 lightBlueBg rounded px-2 py-1"> {entry.salary}</p>
-            </h3>
-            <h3 className="blueText mt-4 mb-1 onePointTwoRem">The school</h3>
-            <p className="m-0 displayLineBreaks">{entry.schoolDescription}</p>
-            <h3 className="blueText mt-3 mb-1 onePointTwoRem">The Job</h3>
-            <p className="m-0 displayLineBreaks">{entry.jobDescription}</p>
-            <h3 className="blueText mt-3 mb-1 onePointTwoRem">Requirements</h3>
-            <p className="m-0 displayLineBreaks">{entry.requirements}</p>
-            <h3 className="blueText mt-3 mb-1 onePointTwoRem">
-              Extra benefits
-            </h3>
-            <p className="m-0 displayLineBreaks">{entry.otherBenefits}</p>
-            <h3 className="blueText mt-3 mb-1 onePointTwoRem">Contact email</h3>
-            <a
-              className="m-0 displayLineBreaks text-decoration-none text-muted fst-italic entryEmailLink"
-              href={`mailto:${entry.contactEmail}`}
-            >
-              {entry.contactEmail}
-            </a>
-            {entry.website ? (
-              <>
-                <h3 className="blueText mt-3 mb-1 onePointTwoRem">Website</h3>
-                <a
-                  className="m-0 displayLineBreaks text-decoration-none text-muted fst-italic entryEmailLink"
-                  href={`https://${entry.website}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {entry.website}
-                </a>
-              </>
-            ) : null}
-            <div className="mt-4">
-              <Alert variant="info" className="custom-alert">
-                <Alert.Heading>Information</Alert.Heading>
-                <ul className="my-0 py-0">
-                  <li>
-                    <p className="m-0 p-0">
-                      To apply for this job please use the contact email in the
-                      advert.
-                    </p>
-                  </li>
-                  <li>
-                    <p className="m-0 p-0">
-                      Please read{" "}
-                      <span
-                        className="safety-modal-link fw-bold"
-                        onClick={() => setShow(true)}
-                      >
-                        this important information
-                      </span>{" "}
-                      about staying safe when applying for jobs.
-                    </p>
-                  </li>
-                </ul>
-              </Alert>
-            </div>
+          </Button>
+          <p className="mb-0 pt-3 border-top">
+            {formatDate(entry.dateCreated)}
+          </p>
+          <h2 className="blueText p-0 mx-0 mt-2 mb-2">{entry.schoolName}</h2>
+          <h3 className="m-0 onePointTwoRem normalWeight d-flex align-items-center">
+            <img
+              src={workIcon}
+              alt="work Icon"
+              className="heightOnePointTwoRem me-3"
+            />
+            <p className="m-0 lightBlueBg rounded px-2 py-1">
+              {entry.jobTitle}
+            </p>
+          </h3>
+          <h3 className="m-0 onePointTwoRem py-1 normalWeight d-flex align-items-center">
+            <img
+              src={locationIcon}
+              alt="location Icon"
+              className="heightOnePointTwoRem me-3"
+            />
+            <p className="m-0 lightBlueBg rounded px-2 py-1">
+              {entry.location}
+            </p>
+          </h3>
+          <h3 className="m-0 onePointTwoRem normalWeight d-flex align-items-center">
+            <img
+              src={money}
+              alt="location Icon"
+              className="heightOnePointTwoRem me-3"
+            />
+            <p className="m-0 lightBlueBg rounded px-2 py-1"> {entry.salary}</p>
+          </h3>
+          <h3 className="blueText mt-4 mb-1 onePointTwoRem">The school</h3>
+          <p className="m-0 displayLineBreaks">{entry.schoolDescription}</p>
+          <h3 className="blueText mt-3 mb-1 onePointTwoRem">The Job</h3>
+          <p className="m-0 displayLineBreaks">{entry.jobDescription}</p>
+          <h3 className="blueText mt-3 mb-1 onePointTwoRem">Requirements</h3>
+          <p className="m-0 displayLineBreaks">{entry.requirements}</p>
+          <h3 className="blueText mt-3 mb-1 onePointTwoRem">Extra benefits</h3>
+          <p className="m-0 displayLineBreaks">{entry.otherBenefits}</p>
+          <h3 className="blueText mt-3 mb-1 onePointTwoRem">Contact email</h3>
+          <a
+            className="m-0 displayLineBreaks text-decoration-none text-muted fst-italic entryEmailLink"
+            href={`mailto:${entry.contactEmail}`}
+          >
+            {entry.contactEmail}
+          </a>
+          {entry.website ? (
+            <>
+              <h3 className="blueText mt-3 mb-1 onePointTwoRem">Website</h3>
+              <a
+                className="m-0 displayLineBreaks text-decoration-none text-muted fst-italic entryEmailLink"
+                href={`https://${entry.website}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {entry.website}
+              </a>
+            </>
+          ) : null}
+          <div className="mt-4">
+            <Alert variant="info" className="custom-alert">
+              <Alert.Heading>Information</Alert.Heading>
+              <ul className="my-0 py-0">
+                <li>
+                  <p className="m-0 p-0">
+                    To apply for this job please use the contact email in the
+                    advert.
+                  </p>
+                </li>
+                <li>
+                  <p className="m-0 p-0">
+                    Please read{" "}
+                    <span
+                      className="safety-modal-link fw-bold"
+                      onClick={() => setShow(true)}
+                    >
+                      this important information
+                    </span>{" "}
+                    about staying safe when applying for jobs.
+                  </p>
+                </li>
+              </ul>
+            </Alert>
           </div>
-        ) : (
+        </div>
+        {/* ) : (
           // Display the Spinner while data is loading
           <div className="col mt-5">
             <Spinner animation="grow" variant="info" />
           </div>
-        )}
+        )} */}
       </div>
       <Modal
         show={show}
