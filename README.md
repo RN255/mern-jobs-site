@@ -2,6 +2,11 @@
 
 A job's board for ESL jobs. Created using mern and hosted (briefly) on IONOS and render. The website was not commercially successful so it's been taken offline.
 
+## Website is live at:
+This is a version using a JavaScript file instead of the Mongo DB backend.
+
+https://mern-jobs-site-f71a.vercel.app/
+
 ## Screenshots
 ![Dan Dan Chinese screenshot](https://github.com/RN255/mern-jobs-site/blob/master/front-end/src/assets/eslGatewayScreenshot.jpg)
 
